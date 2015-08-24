@@ -1,0 +1,20 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_3_0.dtd" >
+
+<web-app>
+
+	<display-name>SampleListener</display-name>
+
+	<!-- 1 -->
+	<context-param>
+		<param-name>initParam</param-name>
+		<param-value>SysBloのリスナーに関する記事です</param-value>
+	</context-param>
+
+	<!-- 2 -->
+	<session-config>
+    	<session-timeout>1</session-timeout>
+  	</session-config>
+
+</web-app>
