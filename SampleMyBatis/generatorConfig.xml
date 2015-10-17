@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<context id="context1">
+
+		<!-- 生成するクラスにタイムスタンプを付与するか否かの設定になります。 value="true"にすると設定しません。 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<!-- JDBCの設定箇所 -->
+		<jdbcConnection driverClass="org.postgresql.Driver"
+			connectionURL="jdbc:postgresql://localhost:5432/postgres" userId="postgres"
+			password="postgres" />
+
+		<!-- エンティティクラスの生成先設定箇所です。 targetPackage⇒生成パッケージ targetProject⇒ルートディレクトリからtargetPackageまでのパス -->
+		<javaModelGenerator targetPackage="sysblo.entity"
+			targetProject="src/main/java" />
+
+		<!-- マッパーファイルの生成先を指定します。 targetPackage⇒生成パッケージ targetProject⇒ルートディレクトリからtargetPackageまでのパス
+			※XMLなのでリソース配下に配置しています。 -->
+		<sqlMapGenerator targetPackage="sysblo.mapper"
+			targetProject="src/main/resources" />
+
+		<!-- クライアントファイルの生成先を指定します。 targetPackage⇒生成パッケージ targetProject⇒ルートディレクトリからtargetPackageまでのパス
+			type⇒生成するクライアントファイルのタイプを指定 XMLMAPPERはマッパーインタフェースとマッパーのみ生成 -->
+		<javaClientGenerator targetPackage="sysblo.client"
+			targetProject="src/main/java" type="XMLMAPPER" />
+
+		<!-- 対象のスキーマとテーブル名を記述します。 -->
+		<table schema="sample_mybatis" tableName="customer_info_tbl" />
+
+	</context>
+</generatorConfiguration>
